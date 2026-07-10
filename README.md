@@ -1,28 +1,53 @@
 # 🌍 AirIndx – Real-Time Air Quality Dashboard
 
-AirIndx is a modern and responsive web application that provides real-time Air Quality Index (AQI), weather conditions, and pollution data for cities around the world. It combines weather and air quality APIs to deliver an intuitive dashboard with interactive visualizations and health recommendations.
+<p align="center">
+
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+
+</p>
+
+<p align="center">
+
+🚀 <strong>Live Demo:</strong> https://YOUR_LIVE_LINK_HERE
+
+⭐ If you like this project, consider giving it a star!
+
+</p>
+
+---
+
+## 📖 About
+
+AirIndx is a modern, responsive web application that provides **real-time Air Quality Index (AQI)**, weather conditions, and pollution information for cities around the world.
+
+The dashboard integrates **OpenWeather API** and **World Air Quality Index (WAQI) API** to display live environmental data through an intuitive and interactive user interface.
 
 ---
 
 ## ✨ Features
 
-- 🌍 Search air quality by city
+- 🌍 Search AQI by city
 - 📊 Live Air Quality Index (AQI)
-- 📈 Interactive AQI trend chart using Chart.js
-- 🌡️ Current weather information
-- 💧 Humidity, Wind Speed & Visibility
-- 🌫️ Major pollutant levels
+- 📈 Interactive AQI Trend Chart
+- 🌡️ Temperature & Feels Like
+- 💧 Humidity
+- 🌬️ Wind Speed
+- 👀 Visibility
+- 🌫️ Major Pollutant Levels
   - PM2.5
   - PM10
   - CO
   - NO₂
   - SO₂
   - O₃
-- ❤️ Health recommendations based on AQI
-- 📍 Dynamic location updates
-- 🕒 Live date and time
-- 💾 Recent city search storage
-- 📱 Fully responsive UI
+- ❤️ Health Recommendations
+- 📍 Dynamic City & Country Detection
+- 🕒 Live Date & Time
+- 💾 Recent Search Storage
+- 📱 Fully Responsive Design
 
 ---
 
@@ -33,19 +58,14 @@ AirIndx is a modern and responsive web application that provides real-time Air Q
 - JavaScript (ES6 Modules)
 - Chart.js
 - OpenWeather API
-- World Air Quality Index (WAQI) API
+- WAQI API
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 AirIndx/
-│
-├── assets/
-│   ├── icons/
-│   ├── images/
-│   └── screenshots/
 │
 ├── js/
 │   ├── api.js
@@ -54,55 +74,66 @@ AirIndx/
 │   ├── ui.js
 │   └── utils.js
 │
+├── screenshots/
+│   ├── dashboard.png
+│   ├── search.png
+│   └── mobile.png
+│
 ├── index.html
 ├── style.css
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-└── .env
+└── .env.example
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/prashantVESIT/AOI-Project.git
 ```
 
-### Open the project
+### Open the Project
 
-Open the project folder in Visual Studio Code.
+Open the folder in **Visual Studio Code**.
 
 ### Configure API Keys
 
-Create a `.env` file in the project root and add your API keys:
+Create a `.env` file in the project root:
 
 ```env
 OPENWEATHER_API_KEY=YOUR_OPENWEATHER_API_KEY
 WAQI_API_KEY=YOUR_WAQI_API_KEY
 ```
 
-> **Note:** This project currently uses frontend API requests. For production deployments, API requests should be moved to a backend service to keep API keys secure.
+> **Note:** This project currently makes API requests from the frontend. For production deployments, API requests should be handled through a backend to keep API keys secure.
 
 ---
 
-## 📸 Screenshots
+## 📸 Project Preview
 
-Add screenshots of your dashboard inside:
+Add your screenshots inside the `screenshots/` folder.
 
-```
-assets/screenshots/
+```text
+screenshots/
+├── dashboard.png
+├── search.png
+└── mobile.png
 ```
 
 Example:
 
-- Home Dashboard
-- AQI Chart
-- Search Result
-- Mobile View
+```markdown
+![Dashboard](screenshots/dashboard.png)
+
+![Search](screenshots/search.png)
+
+![Mobile View](screenshots/mobile.png)
+```
 
 ---
 
@@ -115,13 +146,13 @@ Example:
 
 ## 📈 Future Improvements
 
-- Live AQI map integration
-- 7-day AQI forecast
-- Geolocation support
-- Dark/Light mode
-- Air quality comparison between cities
-- PWA support
-- Backend integration for secure API keys
+- 🌍 Interactive AQI Map
+- 📅 7-Day AQI Forecast
+- 📍 Current Location Detection
+- 🌙 Dark / Light Theme
+- 🔔 AQI Alerts & Notifications
+- ⚡ Progressive Web App (PWA)
+- 🔒 Backend API Integration
 
 ---
 
@@ -129,12 +160,20 @@ Example:
 
 **Prashant Singh**
 
-Computer Engineering Student | VESIT
+Automation & Robotics Engineering Student | VESIT
 
-GitHub: https://github.com/prashantVESIT
+🔗 GitHub: https://github.com/prashantVESIT
+
+💼 LinkedIn: *(Add your LinkedIn profile here)*
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
+
+---
+
+<p align="center">
+Made with ❤️ by <strong>Prashant Singh</strong>
+</p>
