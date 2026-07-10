@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AirIndx | Real-Time Air Quality Dashboard</title>
+
+    <meta name="description"
+        content="Monitor Air Quality Index, Weather Conditions and Pollution Levels in Real-Time.">
+
+    <meta name="keywords"
+        content="AQI, Air Quality, Pollution, Weather Dashboard">
+
+    <meta name="theme-color" content="#0F172A">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<div class="logo">
+
+<i class="fas fa-wind"></i>
+
+<h2>AirIndx</h2>
+
+</div>
+
+<nav class="nav">
+
+<a href="#">Dashboard</a>
+
+<a href="#">Forecast</a>
+
+<a href="#">About</a>
+
+<button class="btn-primary">
+
+Get Started
+
+</button>
+
+</nav>
+
+</header>
+<main class="main-content">
+
+<section class="left-panel">
+
+<div class="hero">
+
+<h1 class="title">
+
+Air Quality
+
+<span class="light">
+
+Dashboard
+
+</span>
+
+</h1>
+
+<p class="subtitle">
+
+Monitor live air quality, weather and pollution levels around the world.
+
+</p>
+
+<div class="date-location">
+
+<span id="datetime"></span>
+
+<span>
+
+📍
+
+<span id="location">
+
+Mumbai
+
+</span>
+
+</span>
+
+</div>
+
+</div>
+
+<form class="search-box" id="searchForm">
+
+<i class="fas fa-search"></i>
+
+<input
+
+type="text"
+
+id="citySearch"
+
+placeholder="Search city..."
+
+autocomplete="off"
+
+>
+
+<button
+
+type="submit"
+
+class="btn-search"
+
+id="searchButton">
+
+Search
+
+</button>
+
+</form>
+
+<!-- Dashboard Stats -->
+
+<div class="stats-grid">
+
+    <!-- AQI Card -->
+
+    <div class="card large-card">
+
+        <div class="card-header">
+
+            <h3>Air Quality Index</h3>
+
+            <span class="status" id="aqiStatus">
+
+                Moderate
+
+            </span>
+
+        </div>
+
+        <div class="aqi-display" id="mainAqi">
+
+            78
+
+        </div>
+
+        <p class="small-text">
+
+            Dominant Pollutant
+
+        </p>
+
+        <h4 id="pollutant">
+
+            PM2.5
+
+        </h4>
+
+    </div>
+
+    <!-- Temperature -->
+
+    <div class="card stat-card">
+
+        <i class="fas fa-temperature-high stat-icon"></i>
+
+        <p>Temperature</p>
+
+        <h2 id="temperature">
+
+            29°C
+
+        </h2>
+
+    </div>
+
+    <!-- Humidity -->
+
+    <div class="card stat-card">
+
+        <i class="fas fa-droplet stat-icon"></i>
+
+        <p>Humidity</p>
+
+        <h2 id="humidity">
+
+            64%
+
+        </h2>
+
+    </div>
+
+    <!-- Wind -->
+
+    <div class="card stat-card">
+
+        <i class="fas fa-wind stat-icon"></i>
+
+        <p>Wind Speed</p>
+
+        <h2 id="wind">
+
+            12 km/h
+
+        </h2>
+
+    </div>
+
+</div>
+
+<section class="card">
+
+    <div class="card-header">
+
+        <h3>
+
+            AQI Scale
+
+        </h3>
+
+    </div>
+
+    <div class="aqi-scale">
+
+        <div class="scale good">
+
+            Good
+
+        </div>
+
+        <div class="scale moderate">
+
+            Moderate
+
+        </div>
+
+        <div class="scale unhealthy">
+
+            Poor
+
+        </div>
+
+        <div class="scale very-unhealthy">
+
+            Very Unhealthy
+
+        </div>
+
+        <div class="scale hazardous">
+
+            Hazardous
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="chart-card">
+
+    <h2>AQI Trend</h2>
+
+    <canvas id="aqiChart"></canvas>
+
+</section>
+
+<section class="card">
+
+<h3 class="card-title">
+
+Major Pollutants
+
+</h3>
+
+<div class="pollutants-grid">
+
+<div class="pollutant-card">
+
+<h4>PM2.5</h4>
+
+<h2 id="pm25">
+
+32
+
+</h2>
+
+</div>
+
+<div class="pollutant-card">
+
+<h4>PM10</h4>
+
+<h2 id="pm10">
+
+48
+
+</h2>
+
+</div>
+
+<div class="pollutant-card">
+
+<h4>CO</h4>
+
+<h2 id="co">
+
+2.1
+
+</h2>
+
+</div>
+
+<div class="pollutant-card">
+
+<h4>NO₂</h4>
+
+<h2 id="no2">
+
+18
+
+</h2>
+
+</div>
+
+<div class="pollutant-card">
+
+<h4>SO₂</h4>
+
+<h2 id="so2">
+
+8
+
+</h2>
+
+</div>
+
+<div class="pollutant-card">
+
+<h4>O₃</h4>
+
+<h2 id="o3">
+
+22
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h3>
+
+Health Recommendations
+
+</h3>
+
+<div class="recommendations">
+
+<div>
+
+😷
+
+<span id="advice1">
+
+Wear a mask outdoors.
+
+</span>
+
+</div>
+
+<div>
+
+🚴
+
+<span id="advice2">
+
+Avoid heavy outdoor exercise.
+
+</span>
+
+</div>
+
+<div>
+
+🚪
+
+<span id="advice3">
+
+Keep windows closed.
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ================= RIGHT PANEL ================= -->
+
+<section class="right-panel">
+
+    <!-- Globe Card -->
+
+    <div class="card globe-card">
+
+        <div class="card-header">
+
+            <h3>Live AQI Map</h3>
+
+            <span class="live-dot">
+                ● LIVE
+            </span>
+
+        </div>
+
+        <div class="globe-container">
+
+            <div class="globe">
+
+                <div class="marker" id="marker">
+
+                    78
+
+                </div>
+
+            </div>
+
+            <div class="aqi-badge" id="badge">
+
+                78
+
+            </div>
+
+            <!-- Floating Popup -->
+
+            <div class="popup">
+
+                <div class="popup-header">
+
+                    <i class="fas fa-location-dot"></i>
+
+                    <span id="popupCity">
+
+                        Mumbai, India
+
+                    </span>
+
+                </div>
+
+                <div class="popup-aqi">
+
+                    <div class="popup-value" id="popupAqi">
+
+                        78
+
+                    </div>
+
+                    <div class="popup-status" id="popupStatus">
+
+                        Moderate
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+        <!-- Weather Summary -->
+
+    <div class="card weather-summary">
+
+        <div class="card-header">
+
+            <h3>
+
+                Current Weather
+
+            </h3>
+
+        </div>
+
+        <div class="weather-grid">
+
+            <div>
+
+                <i class="fas fa-temperature-half"></i>
+
+                <p>Feels Like</p>
+
+                <h3 id="feelsLike">
+
+                    31°C
+
+                </h3>
+
+            </div>
+
+            <div>
+
+                <i class="fas fa-eye"></i>
+
+                <p>Visibility</p>
+
+                <h3 id="visibility">
+
+                    10 km
+
+                </h3>
+
+            </div>
+
+            <div>
+
+                <i class="fas fa-cloud"></i>
+
+                <p>Condition</p>
+
+                <h3 id="condition">
+
+                    Clear Sky
+
+                </h3>
+
+            </div>
+
+            <div>
+
+                <i class="fas fa-sun"></i>
+
+                <p>UV Index</p>
+
+                <h3 id="uvIndex">
+
+                    5
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+        <!-- Last Update -->
+
+    <div class="card update-card">
+
+        <h3>
+
+            Last Updated
+
+        </h3>
+
+        <h2 id="lastUpdated">
+
+            --:--
+
+        </h2>
+
+        <p>
+
+            Data refreshes automatically after every search.
+
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+    <p>
+
+        Designed & Developed by
+
+        <strong>
+
+            Prashant Singh
+
+        </strong>
+
+    </p>
+
+    <p>
+
+        Real-Time Air Quality Dashboard
+
+    </p>
+
+</footer>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="js/script.js"></script>  
+
+
+
+</body>
+
+</html>
