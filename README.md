@@ -164,7 +164,7 @@ Automation & Robotics Engineering Student | VESIT
 
 🔗 GitHub: https://github.com/prashantVESIT
 
-💼 LinkedIn: *(Add your LinkedIn profile here)*
+💼 LinkedIn: https://www.linkedin.com/in/prashant-singh-13b570221/
 
 ---
 
