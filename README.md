@@ -11,7 +11,7 @@
 
 <p align="center">
 
-🚀 <strong>Live Demo:</strong> https://YOUR_LIVE_LINK_HERE
+🚀 <strong>Live Demo:</strong> https://prashantvesit.github.io/AOI-Project/
 
 ⭐ If you like this project, consider giving it a star!
 
