@@ -11,7 +11,7 @@
 
 <p align="center">
 
-🚀 <strong>Live Demo:</strong> https://prashantvesit.github.io/AOI-Project/
+🚀 <strong>Live Demo:</strong> https://airindex.vercel.app/
 
 ⭐ If you like this project, consider giving it a star!
 
