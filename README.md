@@ -17,15 +17,6 @@
 </div>
 
 ---
-
-## 🖼️ Preview
-
-<div align="center">
-<img src="" alt="AirIndx Dashboard" width="90%">
-</div>
-
----
-
 ## 📖 About
 
 **AirIndx** is a sleek, modern, and fully responsive web application that delivers **real-time Air Quality Index (AQI)** data, live weather conditions, and detailed pollutant breakdowns for any city on Earth.
